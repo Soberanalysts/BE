@@ -66,7 +66,10 @@ app.get('/get-items', (req, res) => {
     const userItems = data.slice(start,end);
     const exD = exchangeData.slice(start,end);
 
-    res.json(userItems);
+    // res.json(userItems);
+    res.json({
+        items: userItems,
+        exchangeData: exD});
 });
 
 app.listen(port, () => {
